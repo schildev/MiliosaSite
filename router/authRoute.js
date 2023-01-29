@@ -1,5 +1,4 @@
 const express = require("express");
-const router = require("../../nodeProject/serverCode/routes/blogRoute");
 const Router = express.Router();
 const controller = require("../controllers/authController");
 
