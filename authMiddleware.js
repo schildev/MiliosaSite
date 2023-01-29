@@ -6,7 +6,7 @@ const faction = require("./model/factionModel");
 const requireAdminAuth = (request, response, next) => {
     const jwtToken = request.cookies.jwt;
     if(jwtToken){
-        jwt.verify(jwtToken, process.env.SECRET_KEY; "jesus christ super mega nigga lmao u too nigg bro", async (err, decodedToken) => {
+        jwt.verify(jwtToken, process.env.SECRET_KEY, async (err, decodedToken) => {
             if(err){
                 response.redirect("/auth/login");
             }
@@ -26,7 +26,7 @@ const requireAdminAuth = (request, response, next) => {
 const requireFactionAuth = (request, response, next) => {
     const jwtToken = request.cookies.jwt;
     if(jwtToken){
-        jwt.verify(jwtToken, "jesus christ super mega nigga lmao u too nigg bro", async (err, decodedToken) => {
+        jwt.verify(jwtToken, process.env.SECRET_KEY, async (err, decodedToken) => {
             if(err){
                 response.redirect("/auth/login");
             }
@@ -43,7 +43,7 @@ const requireFactionAuth = (request, response, next) => {
 const checkUser = (request, response, next) => {
     const token = request.cookies.jwt;
     if(token){
-        jwt.verify(token, "jesus christ super mega nigga lmao u too nigg bro", async (err, decodedToken) => {
+        jwt.verify(token, process.env.SECRET_KEY, async (err, decodedToken) => {
             if(err){
                 response.locals.userlog = null;
                 next();
