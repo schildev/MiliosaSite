@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-lg navbar-light" style="border-bottom: #ccc 1px solid;margin-bottom: 20px;;">
+    <a class="navbar-brand" href="/" style="margin-left: 16px;;">
+        <img src="/carre_serveur_imgur.png" width="50" height="50">
+    </a>
+    <h3 style="font-family: 'sofia sans';margin:0;"><a id="homeLink" href="/" style="color: #000;">Miliosa City</a></h3>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Miliosa City V2</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/shop">Boutique</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/factions">Factions</a>
+            </li>
+            
+            <% if(userlog == null){ %>
+            <li class="nav-item" style="display: flex;align-items: center;">
+                <a class="nav-link" href="https://discord.gg/wqCkCcC9FE" target="_blank"><img src="/discord.svg" width="22" height="22"></a>
+            </li>
+            <li class="nav-item ms-2">
+                <a href="/auth/signup" class="nav-link btn btn-outline-info" style="border-radius: 0;font-family: initial;">Créer un compte</a>
+            </li>
+            <li class="nav-item">
+                <a href="/auth/login" class="nav-link btn btn-outline-danger me-3">Se connecter</a>
+            </li>
+            <% }else {%>
+                <li class="nav-item">
+                    <a href="/auth/user/<%= userlog.username %>" class="nav-link">Mon compte</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/auth/logout" class="nav-link">Déconnexion</a>
+                </li>
+                <li class="nav-item" style="display: flex;align-items: center;">
+                    <a class="nav-link" href="https://discord.gg/wqCkCcC9FE" target="_blank"><img src="/discord.svg" width="22" height="22"></a>
+                </li>    
+            <% }%>
+          </ul>
+        </div>
+      </div>
+    <!-- <div style="justify-content: end" class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Accueil</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/shop">Boutique</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/factions">Factions</a>
+            </li>
+            <li class="nav-item" style="display: flex;align-items: center;">
+                <a class="nav-link" href="https://discord.gg/wqCkCcC9FE" target="_blank"><img src="/discord.svg" width="22" height="22"></a>
+            </li>
+            <li class="nav-item ms-2">
+                <a href="" class="nav-link btn btn-outline-info" style="border-radius: 0;font-family: initial;">Créer un compte</a>
+            </li>
+            <li class="nav-item">
+                <a href="" class="nav-link btn btn-outline-danger me-3">Se connecter</a>
+            </li>
+        </ul>
+    </div> -->
+</nav>

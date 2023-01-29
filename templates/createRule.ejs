@@ -1,0 +1,36 @@
+<html lang="fr">
+<%- include("./partials/header.ejs") %>
+<body>
+    <%- include("./partials/navbar.ejs") %>
+    <div class="container-fluid">
+        <h1 class="h3">Créer une règle</h3>
+        <%if(errors){ %>
+            <div class="text-danger h6">
+                 <%= errors %>
+            </div>
+        <% } %>
+        <form method="POST" class="mb-5 mt-1">
+            <div class="form-group">
+              <label for="title">Titre de la règle</label>
+              <input type="text" class="form-control" id="title" name="title" required placeholder="Entrez le titre de la règle">
+            </div>
+            <div class="form-group">
+              <label for="punition">Texte</label>
+              <input type="text" class="form-control" id="punition" name="punition" required placeholder="Entrez la punition pour cette règle">
+            </div>
+            <div class="form-group">
+                <label for="type">Type de règle</label>
+                <select class="form-control" id="type" name="type" required>
+                  <option value="punition">Punition</option>
+                  <option value="conseil">Conseil</option>
+                </select>
+              </div>
+            <button type="submit" class="btn btn-primary">Créer la règle</button>
+          </form>          
+    </div>
+    <%- include("./partials/footer.ejs") %>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+</body>
+</html>
