@@ -6,7 +6,7 @@ const faction = require("./model/factionModel");
 const requireAdminAuth = (request, response, next) => {
     const jwtToken = request.cookies.jwt;
     if(jwtToken){
-        jwt.verify(jwtToken, "jesus christ super mega nigga lmao u too nigg bro", async (err, decodedToken) => {
+        jwt.verify(jwtToken, process.env.SECRET_KEY; "jesus christ super mega nigga lmao u too nigg bro", async (err, decodedToken) => {
             if(err){
                 response.redirect("/auth/login");
             }
