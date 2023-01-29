@@ -2,7 +2,7 @@ const express = require("express");
 
 const mongoose = require("mongoose");
 const app = express();
-const dbLogin = null;
+const dbLogin = process.env.dblogin;
 const baseController = require("./controllers/controller");
 const ruleRouter = require("./router/ruleRouter");
 const shopRouter = require("./router/shopRouter");
