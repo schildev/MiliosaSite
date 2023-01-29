@@ -1,0 +1,48 @@
+<html>
+    <%- include("./partials/header.ejs") %>
+    <body>
+        <%- include("./partials/navbar.ejs") %>
+        <div class="container-fluid">
+            <div class="row">
+              <% factions.forEach(faction => { %>
+                <% if(faction.image){ %>
+                  <div class="col-md-6 col-12 ml-2 ps-3">
+                    <div class="row">
+                      <div class="col-6 px-1 d-flex">
+                        <img style="max-height: 270px;width: 100%;" class="img-fluid" src="/<%= faction.image %>">
+                      </div>
+                      <div class="col-6 px-1">
+                        <h3 class="h3 mb-1 d-flex pl-2" style="align-items: center;font-family: 'Red hat display';"><%= faction.name %></h3>
+                        <p style="font-family: 'Arvo';"><%= faction.description %></p>
+                      </div>
+                      <div class="col-12 px-1">
+                        <div class="d-flex" style="justify-content: space-between;">
+                          <p style="font-family: Arvo;" class="mb-1 mt-1"> <% if(faction.members.length > 0 && faction.members[0] != 'null'){%> <%= faction.members.length %> <%} else {%> 0 <% } %> membres actifs</p>
+                          <p style="font-family: Arvo;"><%= faction.typefaction %></p>
+                        </div>
+                        <div class="btn-group">
+                          <a class="btn btn-outline-dark" style="border-radius: 0;" href="/factions/faction/<%= faction._id %>">Voir la faction</a>
+                        <% if(locfaction){ %>
+                          <% if(userlog.isFactionLeader && locfaction._id.toString() == faction._id.toString()){ %>
+                          <a href="/factions/modificate/<%= faction._id %>" style="border-radius:0;" class="btn btn-outline-success ms-1">Modifier la faction</a>
+                          <% } %>
+                        <% }%>
+                          <% if(userlog && userlog.isAdmin){%>
+                            <% if(locfaction == null){%>
+                            <a href="/factions/modificate/<%= faction._id %>" style="border-radius:0;" class="btn btn-outline-success ms-1">Modifier la faction</a>
+                            <%}%>
+                            <a href="/factions/admin/faction/changemembers/<%= faction._id %>" style="border-radius:0;" class="btn btn-outline-danger ms-1">Modifier les membres de la faction</a>
+                          <% } %>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                <% } else{ %>
+
+                  <% } %>
+              <% }) %>
+            </div>
+        </div>
+        <%- include("./partials/footer.ejs") %>
+    </body>
+</html>
