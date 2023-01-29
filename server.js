@@ -16,7 +16,8 @@ app.set("views", "templates");
 app.use(express.static("static"));
 app.use("/media", express.static("media"));
 app.use(express.urlencoded({extended:true}));
-app.use(cookieParser())
+app.use(cookieParser());
+console.log(dbLogin);
 mongoose.connect(dbLogin, {useNewUrlParser:true, useUnifiedTopology:true})
 .then(result => app.listen(8000))
 .catch(err => console.log(err));
