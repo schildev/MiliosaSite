@@ -3,7 +3,7 @@ const Rule = require("../model/ruleModel");
 const index_control = (request, response) => {
     Rule.find()
     .then(data => {
-        return response.render("base", {rules:data});
+        return response.render("base", {rules:data, titlePage:"Accueil"});
     })
     .catch(err => console.log(err));
 }
@@ -18,7 +18,7 @@ const show_rules_get = (request, response) => {
 }
 
 const create_rules_get = (request, response) => {
-    return response.render("createRule", {errors:false});
+    return response.render("createRule", {errors:false, titlePage:"Créer une règle"});
 }
 
 const create_rules_post = (request, response) => {
