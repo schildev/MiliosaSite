@@ -63,4 +63,15 @@ const checkUser = (request, response, next) => {
         next();
     }
 }
-module.exports = {requireAdminAuth, checkUser, requireFactionAuth};
+const getFactionsMiddle = (request, response, next) => {
+    faction.find()
+    .then(result => {
+        response.locals.factionListe = result
+        next();
+    })    
+    .catch(err => {
+        response.locals.factionListe = null;
+        next();
+    })
+}
+module.exports = {requireAdminAuth, checkUser, requireFactionAuth, getFactionsMiddle};
