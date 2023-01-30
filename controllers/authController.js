@@ -20,7 +20,7 @@ const createToken = (id) => {
 }
 
 const signup_get = (request, response) => {
-    response.render("signup");
+    response.render("signup", {titlePage:"S'inscrire"});
 }
 
 const signup_post = async (request, response) => {
@@ -41,7 +41,7 @@ const signup_post = async (request, response) => {
 }
 
 const login_get = (request, response) => {
-    response.render("login");
+    response.render("login", {titlePage:"Se connecter"});
 }
 
 const login_post = async (request, response) => {
@@ -68,10 +68,10 @@ const userInfo = (request, response) => {
     .then(userInfo => {
         faction.findOne({members:username})
         .then(facUser => {
-            response.render("userInfo", {user:userInfo, faction:facUser});
+            response.render("userInfo", {user:userInfo, faction:facUser, titlePage:`Information sur ${username}`});
         })
         .catch(err => {
-            response.render("userInfo", {user:userInfo, faction:null})
+            response.render("userInfo", {user:userInfo, faction:null, titlePage:`Information sur ${username}`})
         })
         
     })
