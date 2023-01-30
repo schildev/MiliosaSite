@@ -4,7 +4,7 @@ const fs = require("fs");
 const shop_index_get = (request, response) => {
     product.find().sort({createdAt:-1})
     .then(products => {
-        return response.render("shop", {products});
+        return response.render("shop", {products, titlePage:"Tous les produits de la boutique"});
     })
     .catch(err => {
         response.status(500).send(err);
@@ -12,7 +12,7 @@ const shop_index_get = (request, response) => {
 }
 
 shop_create_product_get = (request, response) => {
-    return response.render("createProduct", {errors:false});
+    return response.render("createProduct", {errors:false, titlePage:"Créer un produit"});
 }
 
 shop_create_product_post = (request, response) => {
