@@ -13,9 +13,11 @@
             <div class="col-12 col-sm-4">
                 <h5>Factions</h5>
                 <ul class="list-unstyled">
-                    <% factionsliste.forEach(fac => { %>
+                <% if(factionListe != null){ %>
+                    <% factionListe.forEach(fac => { %>
                     <li> <a href="/factions/faction/<%= fac._id %>"><%= fac.name %></a></li>
                     <% }) %>
+                <% } %>
                 </ul>
             </div>
             <div class="col-12 col-sm-4">
