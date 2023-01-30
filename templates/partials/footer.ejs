@@ -13,9 +13,9 @@
             <div class="col-12 col-sm-4">
                 <h5>Factions</h5>
                 <ul class="list-unstyled">
-                    <li><a href="#">Faction 1</a></li>
-                    <li><a href="#">Faction 2</a></li>
-                    <li><a href="#">Faction 3</a></li>
+                    <% factionsliste.forEach(fac => { %>
+                    <li> <a href="/factions/faction/<%= fac._id %>"><%= fac.name %></a></li>
+                    <% }) %>
                 </ul>
             </div>
             <div class="col-12 col-sm-4">
