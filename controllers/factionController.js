@@ -4,7 +4,7 @@ const { User } = require("../model/authModel");
 const factions_index_get = (request, response) => {
     faction.find()
     .then(data => {
-        return response.render("factions", {factions:data})
+        return response.render("factions", {factions:data, titlePage:"Toutes les factions"})
     })
     .catch(err => {
         return response.status(500).send(err);
@@ -12,7 +12,7 @@ const factions_index_get = (request, response) => {
 }
 const factions_create_get = (request, response) => {
     User.find().then(data => {
-        return response.render("createFaction", {errors:false, users:data});
+        return response.render("createFaction", {errors:false, users:data, titlePage:"Créer une faction"});
     })
 }
 
@@ -36,7 +36,7 @@ const faction_info_get = (request, response) => {
     const factionID = request.params.id;
     faction.findById(factionID)
     .then(faction => {
-        response.render("factionInfo", {faction:faction});
+        response.render("factionInfo", {faction:faction, titlePage:`Information sur la faction ${faction.name}`});
     })
     .catch(err => {
         response.redirect("/factions");
@@ -49,7 +49,7 @@ const faction_modificate_get = (request, response) => {
     .then(factiongeted => {
         const loggedUser = response.locals.userlog;
         if(factiongeted.members.includes(loggedUser.username)){
-            response.render("modificateFaction", {faction:factiongeted});
+            response.render("modificateFaction", {faction:factiongeted, titlePage:"Modifier votre faction"});
         }else response.redirect("/factions/");
     })
     .catch(err => {
@@ -103,7 +103,7 @@ const faction_members_change_get = (request, response) => {
     const users = User.find().then(users => {
         faction.findById(factionID)
         .then(factionGetted => {
-            response.render("changeFactionMembers", {faction:factionGetted, users});
+            response.render("changeFactionMembers", {faction:factionGetted, users, titlePage:`Changer les membres de la faction ${factionGetted.name}`});
         })
         .catch(err => {response.status(404).send("Faction non trouvé !");console.log(err);});
         })
