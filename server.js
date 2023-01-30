@@ -9,7 +9,7 @@ const shopRouter = require("./router/shopRouter");
 const factionRouter = require("./router/factionRouter");
 const authRouter = require("./router/authRoute");
 const cookieParser = require("cookie-parser");
-const { checkUser } = require("./authMiddleware");
+const { checkUser, getFactionsMiddle } = require("./authMiddleware");
 
 app.set("view engine", "ejs");
 app.set("views", "templates");
@@ -21,7 +21,7 @@ console.log(dbLogin);
 mongoose.connect(dbLogin, {useNewUrlParser:true, useUnifiedTopology:true})
 .then(result => app.listen(8000))
 .catch(err => console.log(err));
-app.get("*", checkUser);
+app.get("*", getFactionsMiddle, checkUser );
 
 app.get("/", baseController.index_control);
 
