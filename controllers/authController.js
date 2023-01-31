@@ -14,7 +14,7 @@ const handleErrors = (err) => {
 }
 const maxAge = 86400;
 const createToken = (id) => {
-    return jwt.sign({ id }, 'jesus christ super mega nigga lmao u too nigg bro', {
+    return jwt.sign({ id }, process.env.SECRET_KEY, {
         expiresIn: maxAge
       });
 }
