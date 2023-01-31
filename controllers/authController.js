@@ -68,10 +68,10 @@ const userInfo = (request, response) => {
     .then(userInfo => {
         faction.findOne({members:username})
         .then(facUser => {
-            response.render("userInfo", {user:userInfo, faction:facUser, titlePage:`Information sur ${username}`});
+            response.render("userinfo", {user:userInfo, faction:facUser, titlePage:`Information sur ${username}`});
         })
         .catch(err => {
-            response.render("userInfo", {user:userInfo, faction:null, titlePage:`Information sur ${username}`})
+            response.render("userinfo", {user:userInfo, faction:null, titlePage:`Information sur ${username}`})
         })
         
     })
