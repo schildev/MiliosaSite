@@ -38,32 +38,32 @@ Default config
 Put your .png images into github repos, like that
 https://raw.githubusercontent.com/YourName/YourRepo/path_to_your_folder
 If you want to specify your own icons, they're MUST have this names
-torso.png --torso icon (killed in torso part)
-spine.png --spine icon (killed in spine part)
-skull.png -- skull part icon (killed in skull)
-leg.png --leg icon (killed in leg)
-kill.png -- bullets icon (player was shot down)
-back.png -- back icon (killed in back part)
-arm.png -- arm icon (killed in arm)
-ZOMBIE.png - (death from zombie) zombie icon
-WATER.png -- death from thirst
-SUICIDE.png -- player kills himself
-SPARK.png -- death from electricity (&electrical gian zombie)
-SHRED.png -- death from barbed wires, fences, etc...
-SENTRY.png -- shot by sentry
-ROADKILL.png --hit by a car to death
-PUNCH.png --killed by another player with punch
-MELT.png - when player melt in acid
-MELEE.png -- killed with cold weapon
-INFECTION.png -- died from being infected
-HYPER.png --died from zombie at full noon
-FREEZE.png -- froze to death
-FOOD.png -- died from starvation
-CHARGE.png -- was exploded by demolition charge, car explosion, etc...
-BURNING.png -- was burnt down by flamer zombie, etc...
-BREATH.png -- drowned
-BOULDER.png -- smashed by a rock
-BONE.png -- fell from high place
-BLOOD.png --bled out
-ANIMAL.png -- bitten to death by animals (like bears)
-ACID.png -- melt in acid
+* torso.png --torso icon (killed in torso part)
+* spine.png --spine icon (killed in spine part)
+* skull.png -- skull part icon (killed in skull)
+* leg.png --leg icon (killed in leg)
+* kill.png -- bullets icon (player was shot down)
+* back.png -- back icon (killed in back part)
+* arm.png -- arm icon (killed in arm)
+* ZOMBIE.png - (death from zombie) zombie icon
+* WATER.png -- death from thirst
+* SUICIDE.png -- player kills himself
+* SPARK.png -- death from electricity (&electrical gian zombie)
+* SHRED.png -- death from barbed wires, fences, etc...
+* SENTRY.png -- shot by sentry
+* ROADKILL.png --hit by a car to death
+* PUNCH.png --killed by another player with punch
+* MELT.png - when player melt in acid
+* MELEE.png -- killed with cold weapon
+* INFECTION.png -- died from being infected
+* HYPER.png --died from zombie at full noon
+* FREEZE.png -- froze to death
+* FOOD.png -- died from starvation
+* CHARGE.png -- was exploded by demolition charge, car explosion, etc...
+* BURNING.png -- was burnt down by flamer zombie, etc...
+* BREATH.png -- drowned
+* BOULDER.png -- smashed by a rock
+* BONE.png -- fell from high place
+* BLOOD.png --bled out
+* ANIMAL.png -- bitten to death by animals (like bears)
+* ACID.png -- melt in acid
