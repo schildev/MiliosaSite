@@ -1,13 +1,13 @@
 We are happy to inform you about a new plugin for Unturned:
 #Gitankillfeed premium!
 
-This plugin provides you death story of server's players.
+This plugin provides to everyone ability to see all server's player's deaths.
 * Customization: you can set server's logo and header's text
 * Сustomizable font-size and text's colors
 * Displays, how player were killed, cause of his death, with icons and other info.
 
 
-##Configuration
+## Configuration
 Default config
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -34,7 +34,7 @@ Default config
 </gitankillfeedConfiguration>
 ```
 
-##Setting up your your custom icon:
+## Setting up your your custom icon:
 Put your .png images into github repos, like that
 https://raw.githubusercontent.com/YourName/YourRepo/path_to_your_folder
 If you want to specify your own icons, they're MUST have this names
